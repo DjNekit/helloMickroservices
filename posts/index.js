@@ -19,7 +19,7 @@ app.post('/posts', async (req, res) => {
     const postData = { id, title, comments: [] }
 
     posts.push(postData)
-    await axios.post('http://localhost:4000/events', {
+    await axios.post('http://event-bus-srv:4000/events', {
         type: 'POST_CREATED', payload: postData
     })
     .catch(e => console.log(e))
