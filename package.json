@@ -1,0 +1,28 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start:client": "npm run watch --prefix ./client",
+    "start:posts": "npm start --prefix ./posts",
+    "start:comments": "npm start --prefix ./comments",
+    "start:query": "npm start --prefix ./query",
+    "start:moderation": "npm start --prefix ./moderation",
+    "start:event-bus": "npm start --prefix ./event-bus",
+    "start": "npm run start:client && npm run start:posts && npm run start:comments && npm run start:query && npm run start:moderation && npm run start:event-bus"
+  },
+  
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DjNekit/HelloMickroservices.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DjNekit/HelloMickroservices/issues"
+  },
+  "homepage": "https://github.com/DjNekit/HelloMickroservices#readme"
+}
