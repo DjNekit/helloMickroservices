@@ -20,7 +20,7 @@ app.post('/events', async (req, res) => {
 
         if (commentObj.status !== 'rejected') commentObj.status = 'approved' 
         return axios.post(
-            'http://localhost:4000/events', 
+            'http://event-bus-srv:4000/events', 
             { type: 'COMMENT_MODERATED', payload: commentObj }
         )
         .catch(e => console.log(e))

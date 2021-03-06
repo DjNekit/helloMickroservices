@@ -33,7 +33,7 @@ app.post('/posts/:id/comments', async (req, res) => {
         ? commentsByPostId[id].push(commentData)
         : commentsByPostId[id] = [commentData]
 
-    await axios.post('http://localhost:4000/events', {
+    await axios.post('http://event-bus-srv:4000/events', {
         type: 'COMMENT_CREATED', payload: commentData
     })
     
@@ -50,7 +50,7 @@ app.post('/events', (req, res) => {
         commentObj.status = status
         commentObj.comment = comment
         
-        axios.post('http://localhost:4000/events', { 
+        axios.post('http://event-bus-srv:4000/events', { 
             type: 'COMMENT_UPDATED', payload: commentObj 
         })
         .catch(e => console.log(e))

@@ -16,10 +16,7 @@ spec:
         - name: event-bus
           image: nikitalipin97/event-bus
           imagePullPolicy: Always
-          resources:
-            limits:
-              memory: 256Mi
-              cpu: "0.1"
+            
 
 ---
 

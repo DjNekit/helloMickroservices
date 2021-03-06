@@ -11,9 +11,9 @@ app.post('/events', (req, res) => {
     events.push(event)
 
     axios.post('http://posts-clusterip-srv:3001/events', event)
-    // axios.post('http://localhost:3002/events', event)
-    // axios.post('http://localhost:3003/events', event)
-    // axios.post('http://localhost:3004/events', event)
+    axios.post('http://comments-srv:3002/events', event)
+    axios.post('http://query-srv:3003/events', event)
+    axios.post('http://moderation-srv:3004/events', event)
 
     res.status(200).json({})
 })

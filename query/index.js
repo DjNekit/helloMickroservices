@@ -44,7 +44,7 @@ app.post('/events', (req, res) => {
 
 app.listen(3003, async () => {
     console.log('query listen on 3003')
-    const { data } = await axios.get('http://localhost:4000/events')
+    const { data } = await axios.get('http://event-bus-srv:4000/events')
 
     data.events.forEach(event => {
         handleEvent(event.type, event.payload)
