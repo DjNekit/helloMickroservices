@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: query-depl
+  name: client-depl
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app: query
+      app: client
   template:
     metadata:
       labels:
-        app: query
+        app: client
     spec:
       containers:
-      - name: query
-        image: nikitalipin97/query
+      - name: client
+        image: nikitalipin97/client
         imagePullPolicy: Always
 
 ---
@@ -22,13 +21,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: query-srv
+  name: client-srv
 spec:
   selector:
-    app: query
+    app: client
   ports:
-  - name: query
+  - name: client
     protocol: TCP
-    port: 3003
-    targetPort: 3003
+    port: 3000
+    targetPort: 3000
 

@@ -15,6 +15,7 @@ spec:
       containers:
       - name: comments
         image: nikitalipin97/comments
+        imagePullPolicy: Always
        
           
 --- 

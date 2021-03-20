@@ -1,2 +1,6 @@
+.idea
+.vscode
+
+./client2
 */node_modules
-client/dist
+client*/dist

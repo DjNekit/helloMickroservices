@@ -17,9 +17,8 @@ app.get('/posts/:id/comments', (req, res) => {
     res.status(200).json({ data: commentsByPostId[id], result: 0 })
 })
 
-app.post('/posts/:id/comments', async (req, res) => {
-    const { id } = req.params
-    const { comment } = req.body
+app.post('/posts/comments', async (req, res) => {
+    const { id, comment } = req.body
     const commentId = randomBytes(4).toString('hex')
 
     const commentData = {

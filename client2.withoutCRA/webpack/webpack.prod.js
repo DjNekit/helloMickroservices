@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const TerserPlugin = require('terser-webpack-plugin')
 const { SourceMapDevToolPlugin } = require('webpack')
-
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const commonWebpackConfig = require('./webpack.common.js')
@@ -21,7 +20,7 @@ const prodWebpackPlugin = argv => {
             new SourceMapDevToolPlugin({
                 filename: '[file].map'
             }),
-            new BundleAnalyzerPlugin()
+            // new BundleAnalyzerPlugin()
         ]
     }
 }

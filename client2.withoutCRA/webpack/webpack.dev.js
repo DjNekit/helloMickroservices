@@ -8,6 +8,7 @@ const devWebpackConfig = {
     mode: 'development',
     devtool: 'eval-cheap-source-map',
     devServer: {
+        host: 'localhost',
         contentBase: PATHS.dist,
         compress: true,
         port: 3000,
